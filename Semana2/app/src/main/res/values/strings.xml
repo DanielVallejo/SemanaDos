@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Semana2</string>
+    <string name="Nombre_Completo">Nombre Completo</string>
+    <string name="fechaButton">Fecha</string>
+    <string name="fechaNacimiento">Fecha Nacimiento</string>
+    <string name="telefono">Teléfono</string>
+    <string name="email">E-mail</string>
+    <string name="descripcion">Descripción</string>
+    <string name="siguiente">Siguiente</string>'
+    <string name="confirmar">Confirmar Datos</string>
+    <string name="editarDatos">Editar Datos</string>
+
+    <string name="pNombre">Nombre</string>
+    <string name="pFecha">Fecha</string>
+    <string name="pTelefono">Telefono</string>
+    <string name="pEmail">Email</string>
+    <string name="pDescripcion">Descripcion</string>
+</resources>
