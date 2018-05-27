@@ -22,7 +22,7 @@ public class DetalleDatos extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_datos);
 
         //Recibimos los parametros del MainActivity
-        Bundle parametros = getIntent().getExtras();
+        //Bundle parametros = getIntent().getExtras();
         //String nombre = parametros.getString(getResources().getString(R.string.pNombre));
         //String fecha = parametros.getString(getResources().getString(R.string.pFecha));
         //String telefono = parametros.getString(getResources().getString(R.string.pTelefono));
@@ -38,6 +38,7 @@ public class DetalleDatos extends AppCompatActivity {
         tvsTelefono = (TextView) findViewById(R.id.tvTelefono);
         tvsmail = (TextView) findViewById(R.id.tvemail);
         tvsDescr = (TextView) findViewById(R.id.tvDescrip);
+        savedInstanceState = getIntent().getExtras();
 
         if(savedInstanceState !=null){
             String nombre = savedInstanceState.getString("Nombre");
@@ -52,21 +53,20 @@ public class DetalleDatos extends AppCompatActivity {
             tvsTelefono.setText(telefono);
             tvsmail.setText(mail);
             tvsDescr.setText(descripcion);
-
         }
     }
 
     public void regresar(View v){
         //Regresamos con los parametros a edirtar en el MainActivity
 
-        Intent intent = new Intent(getApplicationContext(), DetalleDatos.class);
-        intent.putExtra(getResources().getString(R.string.pNombre),tvsNombre.getText());
-        intent.putExtra(getResources().getString(R.string.pFecha),tvsFecha.getText());
-        intent.putExtra(getResources().getString(R.string.pTelefono),tvsTelefono.getText());
-        intent.putExtra(getResources().getString(R.string.pEmail),tvsmail.getText());
-        intent.putExtra(getResources().getString(R.string.pDescripcion),tvsDescr.getText());
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        //intent.putExtra(getResources().getString(R.string.pNombre),tvsNombre.getText());
+        //intent.putExtra(getResources().getString(R.string.pFecha),tvsFecha.getText());
+        //intent.putExtra(getResources().getString(R.string.pTelefono),tvsTelefono.getText());
+        //intent.putExtra(getResources().getString(R.string.pEmail),tvsmail.getText());
+        //intent.putExtra(getResources().getString(R.string.pDescripcion),tvsDescr.getText());
 
         startActivity(intent);
-        finish();
+        //finish();
     }
 }

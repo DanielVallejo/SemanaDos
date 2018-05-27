@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -53,21 +54,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
  public void pasarParametros(View view){
-     Intent intent = new Intent(getApplicationContext(), DetalleDatos.class);
-     //intent.putExtra(getResources().getString(R.string.pNombre),etcNombre.getText());
-     //intent.putExtra(getResources().getString(R.string.pFecha),etcFecha.getText());
-     //intent.putExtra(getResources().getString(R.string.pTelefono),etcTelefono.getText());
-     //intent.putExtra(getResources().getString(R.string.pEmail),etcmail.getText());
-     //intent.putExtra(getResources().getString(R.string.pDescripcion),etcDescr.getText());
+        String nombre= etcNombre.getText().toString();
+     String fecha= etcFecha.getText().toString();
+     String telefono= etcTelefono.getText().toString();
+     String email= etcmail.getText().toString();
+     String descripcion= etcDescr.getText().toString();
+     if(!nombre.matches("") && !fecha.matches("") && !telefono.matches("")&& !email.matches("")&&
+             !descripcion.matches("")){
+         Intent intent = new Intent(getApplicationContext(), DetalleDatos.class);
+         //intent.putExtra(getResources().getString(R.string.pNombre),etcNombre.getText());
+         //intent.putExtra(getResources().getString(R.string.pFecha),etcFecha.getText());
+         //intent.putExtra(getResources().getString(R.string.pTelefono),etcTelefono.getText());
+         //intent.putExtra(getResources().getString(R.string.pEmail),etcmail.getText());
+         //intent.putExtra(getResources().getString(R.string.pDescripcion),etcDescr.getText());
 
-     intent.putExtra("Nombre",etcNombre.getText().toString());
-     intent.putExtra("Fecha",etcFecha.getText().toString());
-     intent.putExtra("Telefono",etcTelefono.getText().toString());
-     intent.putExtra("Email",etcmail.getText().toString());
-     intent.putExtra("Descripcion",etcDescr.getText().toString());
+         intent.putExtra("Nombre",nombre);
+         intent.putExtra("Fecha",fecha);
+         intent.putExtra("Telefono",telefono);
+         intent.putExtra("Email",email);
+         intent.putExtra("Descripcion",descripcion);
+         startActivity(intent);
 
-     startActivity(intent);
-     finish();
+     }else{
+         Toast.makeText(this,"Campos Obligatorios",Toast.LENGTH_SHORT).show();
+     }
+
+     //finish();
  }
 
 
